@@ -50,6 +50,30 @@ public class HelloClass {
         return "HelloClass{" + "id=" + id + ", message=" + message + '}';
     }
     
-
+ public String pullMessage(int id){
+        Connection con = null;
+        HelloClass hello = null;
+        String message = null;
+        try {
+            con = ConnectionBuilder.getMySqlCond();
+            PreparedStatement pstm = con.prepareStatement("SELECT message FROM HelloClass WHERE id=?");
+            pstm.setInt(1, id);
+            ResultSet rs = pstm.executeQuery();
+            if(rs.next()){
+                message = rs.getString("message");
+            }
+            rs.close();
+            pstm.close();
+            con.close();
+        } catch (ClassNotFoundException ex) {
+            Logger.getLogger(HelloClass.class.getName()).log(Level.SEVERE, null, ex);
+            message = "404 Class not found";
+        } catch (SQLException ex) {
+            Logger.getLogger(HelloClass.class.getName()).log(Level.SEVERE, null, ex);
+            message = "SQL Exception";
+        }
+        
+        return message;
+    }
     
 }
