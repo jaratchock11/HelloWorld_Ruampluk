@@ -56,7 +56,7 @@ public class HelloClass {
         String message = null;
         try {
             con = ConnectionBuilder.getMySqlCond();
-            PreparedStatement pstm = con.prepareStatement("SELECT message FROM HelloClass WHERE id=?");
+            PreparedStatement pstm = con.prepareStatement("SELECT message FROM ruampluk WHERE id=?");
             pstm.setInt(1, id);
             ResultSet rs = pstm.executeQuery();
             if(rs.next()){
@@ -74,6 +74,12 @@ public class HelloClass {
         }
         
         return message;
+    }
+ 
+    public static void main(String[] args) {
+        HelloClass hc = new HelloClass();
+        System.out.println(hc.pullMessage(1));
+        
     }
     
 }
