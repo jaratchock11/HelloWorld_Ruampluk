@@ -47,19 +47,23 @@ mysql -u root -p
 SET PASSWORD = PASSWORD('รหัสผ่านที่ต้องการ'); 
 ```
 [CREATE DATABASE]
+```
 CREATE TABLE `ruampluk` (
   `id` int(11) NOT NULL,
   `message` varchar(45) NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+```
 
 [INSERT DATABASE]
+```
 INSERT INTO `ruamplukhello`.`ruampluk`
 (`id`,
 `message`)
 VALUES
 (<{id: }>,
 <{message: }>);
+```
 
 ### Config Properties
 สร้างไฟล์ config.properties ใน /src/main/resoures โดยใส่
