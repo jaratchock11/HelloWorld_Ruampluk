@@ -18,6 +18,7 @@
 <br><br><br><br>
 
 <h1><center><%=request.getAttribute("hellomessage")%></center></h1>
+<center><img src = "https://media.giphy.com/media/c9ndlj2AUhaqk/giphy.gif"></center>
 
 
 </body>
