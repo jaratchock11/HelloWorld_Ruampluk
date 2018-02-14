@@ -44,4 +44,9 @@ public class ConnectionBuilder {
         return conn;
     }
     
+    public static void main(String[] args) throws ClassNotFoundException, SQLException {
+        ConnectionBuilder con = new ConnectionBuilder();
+        con.getMySqlCond();
+    }
+    
 }
